@@ -19,5 +19,14 @@
     // 5. Buzz
     // ...
     // 15. FizzBuzz
+    echo "<ol>";
+        //lets not write directly :)
+        // echo "<li>Number 1</li>";
+        //write a for loop !
+        for ($i = 0; $i < 10; $i++) {
+            echo $i . "<br>";
+            //add if and if ele here
+        }
 
-    
+    echo "</ol>";
+
