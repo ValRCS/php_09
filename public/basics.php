@@ -51,5 +51,19 @@ echo '<pre>' . $string2 . '</pre>';
 
 echo $longhtml;
 
+// Example 1
+$pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
+//explode is somewhat similar to split in javascript and other languages
+$pieces = explode(" ", $pizza);
+echo $pieces[0]; // piece1
+echo "<br>";
+echo $pieces[1]; // piece2
+echo "<hr>";
+
+$divtag = str_replace("mybody", "Just some Lorem", "<div>mybody</div>");
+echo $divtag;
+
+ 
+
 
 
