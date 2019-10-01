@@ -50,3 +50,29 @@
     } else {
         echo "Sorry $mykey was not found<br>";
     }
+
+    
+    //appending/pushing elements to array
+
+    //print_r is a bit more human readable than var_dump
+    // https://stackoverflow.com/questions/3406171/php-var-dump-vs-print-r
+    $stack = array("orange", "banana");
+    array_push($stack, "apple", "raspberry");
+    print_r($stack);
+    echo "<hr>";
+    //we can pop values from the end 
+    $fruit = array_pop($stack);
+    print_r($stack);
+    echo "My saved fruit $fruit<hr>";
+
+    $input = array("a", "b", "c", "d", "e");
+
+$output = array_slice($input, 2);      // returns "c", "d", and "e"
+var_dump($output);
+echo "<hr>";
+$output = array_slice($input, -2, 1);  // returns "d"
+var_dump($output);
+echo "<hr>";
+$output = array_slice($input, 0, 3);   // returns "a", "b", and "c"
+var_dump($output);
+echo "<hr>";
