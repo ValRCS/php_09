@@ -60,8 +60,11 @@ echo "<br>";
 echo $pieces[1]; // piece2
 echo "<hr>";
 
-$divtag = str_replace("mybody", "Just some Lorem", "<div>mybody</div>");
+//so str_replace a mass copy and replace
+$divtag = str_replace("mybody", "Just some Lorem", "<div>mybody</div><p>mybody</p>");
 echo $divtag;
+echo "<hr>";
+echo "divtag is " . strlen($divtag) . " Characters Long<hr>";
 
  
 
