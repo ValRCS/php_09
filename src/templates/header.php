@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fizzbuzz</title>
-    <link rel="stylesheet" href="styles/fizzbuzz.css">
+    <title><?php echo PAGETITLE;?></title>
+    <link rel="stylesheet" href="styles/<?php echo STYLE;?>">
 </head>
 <body>
