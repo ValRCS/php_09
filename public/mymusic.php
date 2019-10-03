@@ -1,5 +1,6 @@
 <?php
 require_once("../config/config.php");
+require_once("../src/util/util.php");
 require_once("../src/templates/header.php");
 //we want to store config separately and keep this file out of public git
 
@@ -74,25 +75,6 @@ foreach ($myrows as $row) {
 
 //lets print a table of our results
 
-echo "<table>";
-foreach ($myrows as $key => $row) {
-    //special case using first row we create our table head with column names
-    if ($key == 0) {
-        echo "<thead><tr>";
-        foreach ($row as $colname => $unusedcolvalue) {
-            echo "<td>" . $colname . "</td>";
-        }
-        echo "</tr></thead>";
-    }
-    echo "<tr>";
-    // foreach ($row as $unusedcolkey => $colvalue) {
-    foreach ($row as  $cellvalue) {
-        
-        echo "<td>" . $cellvalue . "</td>";
-
-    }
-    echo "</tr>";
-}
-echo "</table>";
+printTable($myrows);
 
 require_once("../src/templates/footer.php");
