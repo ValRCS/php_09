@@ -42,6 +42,10 @@ if (array_key_exists("artist", $_GET) && $_GET["artist"]) {
     $getstmt = $conn->prepare("SELECT * FROM tracks WHERE artist LIKE (?)");
     $mysearchterm = "%" . $_GET["artist"] . "%"; //so we can look for all groups starting with our name
     $getstmt->bind_param("s", $mysearchterm); 
+} else if (array_key_exists("track", $_GET) && $_GET["track"]) {
+    $getstmt = $conn->prepare("SELECT * FROM tracks WHERE name LIKE (?)");
+    $mysearchterm = "%" . $_GET["track"] . "%"; //so we can look for all groups starting with our name
+    $getstmt->bind_param("s", $mysearchterm); 
 } else {
     $getstmt = $conn->prepare("SELECT * FROM tracks");
 }
