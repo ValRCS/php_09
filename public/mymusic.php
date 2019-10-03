@@ -31,6 +31,11 @@ if ($result->num_rows > 0) {
         $trackText .= " - Artist: " . $row["artist"];
         $trackText .=  " " . $row["created"]. "</div>";
         echo $trackText;
+        //without extra variable, same result
+        echo "<div class='my-trk'>id: " . $row["id"] 
+            . " - Name: " . $row["name"] 
+            . " - Artist: " . $row["artist"] 
+            . " " . $row["created"]. "</div>";
     }
 } else {
     echo "0 results";
