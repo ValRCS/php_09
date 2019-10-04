@@ -25,7 +25,7 @@
 
             }
             echo "<td>";
-            echo "<form action='getmusic.php' method='post'>";
+            echo "<form action='deletemusic.php' method='post'>";
             echo "<button name='delbtn' value='" . $row['id'] . "' type='submit'>DELETE</button>";
             echo "</form>";
             echo "</td>";
