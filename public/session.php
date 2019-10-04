@@ -10,3 +10,4 @@
     echo "<form action='login.php' method='post'>";
     echo "<input name='user'>";
     echo "<button name='submitbtn' type='submit'>LOGIN</button>";
+    echo "</form>";
