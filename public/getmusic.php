@@ -29,10 +29,28 @@ mysqli_set_charset($conn,"utf8");
 //we will process POST request here
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $stmt = $conn->prepare("INSERT INTO `tracks` (`name`, `artist`, `album`) VALUES (?,?,?)");
-    $stmt->bind_param("sss", $_POST["newtrack"], $_POST["newartist"], $_POST["newalbum"]); 
-    $stmt->execute();
+    //we decide whether any delete buttons were pressed
+    if (isset($_POST["delbtn"])) {
+        $stmt = $conn->prepare("DELETE FROM `tracks` WHERE `tracks`.`id` = (?)");
+        // $_POST["delbtn"] should return the value of the button
+        $stmt->bind_param("s", $_POST["delbtn"]); 
+        $stmt->execute();
+    } else { //we assume this was for inserting new items
+        $stmt = $conn->prepare("INSERT INTO `tracks` (`name`, `artist`, `album`) VALUES (?,?,?)");
+        $stmt->bind_param("sss", $_POST["newtrack"], $_POST["newartist"], $_POST["newalbum"]); 
+        $stmt->execute();
+    }
+
+
 }
+
+// if($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+
+
+//     $stmt = $conn->prepare("DELETE FROM `tracks` WHERE `tracks`.`id` = (?)");
+//     $stmt->bind_param("s", $_POST["newtrack"], $_POST["newartist"], $_POST["newalbum"]); 
+//     $stmt->execute();
+// }
 
 //of course we need to be careful with user content in our queries
 // $sql = "SELECT id, name, created FROM tracks";

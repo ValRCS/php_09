@@ -24,6 +24,12 @@
                 echo "<td>" . $cellvalue . "</td>";
 
             }
+            echo "<td>";
+            echo "<form action='getmusic.php' method='post'>";
+            echo "<button name='delbtn' value='" . $row['id'] . "' type='submit'>DELETE</button>";
+            echo "</form>";
+            echo "</td>";
+
             echo "</tr>";
         }
         echo "</table>";
