@@ -76,7 +76,7 @@ $result = $getstmt->get_result();
 if ($result->num_rows > 0) {
       $myrows = $result->fetch_all(MYSQLI_ASSOC);
       $conn->close(); //we do not need db anymore since we saved all results
-      printTable($myrows);
+      printMusic($myrows);
 }
 ?>
 <form action="getmusic.php" method="get">
