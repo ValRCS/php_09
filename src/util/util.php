@@ -19,9 +19,17 @@
             }
             echo "<tr>";
             // foreach ($row as $unusedcolkey => $colvalue) {
-            foreach ($row as  $cellvalue) {
-                
-                echo "<td>" . $cellvalue . "</td>";
+            foreach ($row as  $cellkey => $cellvalue) {
+                if ($cellkey == "name") {
+                    echo "<td>";
+                    echo "<form action='updatemusic.php' method='post'>";
+                    echo "<input name='" . $row['id'] . "' value='" . $cellvalue . "'>";
+                    echo "</form>";
+                    echo "</td>";
+                } else {
+                    echo "<td>" . $cellvalue . "</td>";
+                }
+ 
 
             }
             echo "<td>";
