@@ -9,5 +9,7 @@
     echo "<hr>";
     echo "<form action='login.php' method='post'>";
     echo "<input name='user'>";
-    echo "<button name='submitbtn' type='submit'>LOGIN</button>";
+    echo "<button name='loginbtn' type='submit'>LOGIN</button>";
+    echo "<button name='logoutbtn' type='submit'>LOGOUT</button>";
+
     echo "</form>";
