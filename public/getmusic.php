@@ -30,6 +30,8 @@ mysqli_set_charset($conn,"utf8");
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //we decide whether any delete buttons were pressed
+    //we can check which button of type submit was pressed
+    // by checking their name attribute
     if (isset($_POST["delbtn"])) {
         $stmt = $conn->prepare("DELETE FROM `tracks` WHERE `tracks`.`id` = (?)");
         // $_POST["delbtn"] should return the value of the button
