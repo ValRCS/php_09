@@ -31,19 +31,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
 
-    //we decide whether any delete buttons were pressed
-    // foreach ($_POST as $key => $value) {
-    //     $stmt = $conn->prepare("UPDATE `tracks` SET `name` = (?) WHERE `tracks`.`id` = (?)");
-    //     // $stmt = $conn->prepare("DELETE FROM `tracks` WHERE `tracks`.`id` = (?)");
-    //     // $_POST["delbtn"] should return the value of the button
-    //     $stmt->bind_param("ss", $value, $key); 
-    //     $stmt->execute();
-
-        
-    //     break;
-    // }
- 
-    // echo "Deleted post with id: " . $_POST["delbtn"];
-    //redirect ONLY works if no HTML body has been sent
     header('Location: /getmusic.php');
 }
