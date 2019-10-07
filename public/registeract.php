@@ -21,7 +21,14 @@
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         //TODO check if passwords match
-        $pwhash = password_hash($_POST["pw"], PASSWORD_DEFAULT);
+        if ($_POST["pw"] == $_POST["pw2"]) {
+            $pwhash = password_hash($_POST["pw"], PASSWORD_DEFAULT);
+        } else {
+            echo "Mismatched Password";
+            die("Need to go back to previous page");
+            //todo go back to login page
+        }
+        
         //TODO add new user into database
 
         //VALUES (NULL, 'valdis', 'sau', 'v@gmail.com', '3423443', current_timestamp())
