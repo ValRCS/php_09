@@ -1,6 +1,13 @@
 <?php
     //before any code we start sesssion with session_start
     session_start();
+    if (isset($_COOKIE['TestCookie'])) {
+        // echo "Aha! Your cookie name is: ".$_COOKIE['TestCookie'];
+        // echo "<br>";
+        $_SESSION['myname'] = $_COOKIE['TestCookie'];
+        //rememember we would need another cookie for the user id or
+        // we would need to get the user id from the database
+    }
     if (isset($_SESSION['myname'])) {
         echo "Hello " . $_SESSION['myname'];
     } else {

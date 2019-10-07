@@ -59,6 +59,10 @@
         }
 
         if (isset($_POST["logoutbtn"])) { 
+            if (isset($_COOKIE['TestCookie'])) {
+                unset($_COOKIE['TestCookie']);
+                setcookie('TestCookie', '', time() - 3600, '/'); // empty value and old timestamp
+            }
             $_SESSION['myname'] = null;
             //we might needto null more session variables later on
         }
