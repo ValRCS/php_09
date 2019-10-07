@@ -11,7 +11,7 @@
     echo "<label for='user-inp'>USERNAME</label>";
     echo "<input name='user' id='user-inp'>";
     echo "<label for='pw-inp'>PASSWORD</label>";
-    echo "<input name='pw' type='password' id='pw-inp>'";
+    echo "<input name='pw' type='password' id='pw-inp'>";
     echo "<button name='loginbtn' type='submit'>LOGIN</button>";
     echo "<button name='logoutbtn' type='submit'>LOGOUT</button>";
     echo "<input type='checkbox' name='remember' id='remember-chk'>";

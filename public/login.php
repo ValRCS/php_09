@@ -45,12 +45,12 @@
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['myname'] = $username;
                 echo $username."is logged in<br>";
-                // if (isset($_POST['savelogin'])) {
-                //     echo "Saving Loggin";
-                //     //TODO think about safety!
-                //     //setcookie("TestCookie", $_SESSION['username'], time()+3600);
-                //     //setcookie here
-                // }
+                //we check if we checkbox with name attribue remember is set
+                if (isset($_POST['remember'])) {
+                    echo "Saving Loggin";
+                    //TODO think about safety!
+                    setcookie("TestCookie", $_SESSION['myname'], time()+3600);
+                }
             } else {
                 //we keep the error message identical to the one on bad user
                 echo "Bad Login";
