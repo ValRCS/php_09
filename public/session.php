@@ -8,11 +8,13 @@
     }
     echo "<hr>";
     echo "<form action='login.php' method='post'>";
-    echo "<label for='user'>USERNAME</label>";
-    echo "<input name='user'>";
-    echo "<label for='pw'>PASSWORD</label>";
-    echo "<input name='pw' type='password'>";
+    echo "<label for='user-inp'>USERNAME</label>";
+    echo "<input name='user' id='user-inp'>";
+    echo "<label for='pw-inp'>PASSWORD</label>";
+    echo "<input name='pw' type='password' id='pw-inp>'";
     echo "<button name='loginbtn' type='submit'>LOGIN</button>";
     echo "<button name='logoutbtn' type='submit'>LOGOUT</button>";
+    echo "<input type='checkbox' name='remember' id='remember-chk'>";
+    echo "<label for='remember-chk'>Remember me (uses Cookie insert GDPR warning here)</label>";
 
     echo "</form>";
