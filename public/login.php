@@ -23,15 +23,20 @@
             $stmt->bind_param("s", $username); // "sss" means the values are 3 strings (another type is "d" or "f")
             // set parameters and execute
             $stmt->execute();
-            $res = $stmt->get_result();
+            $res = $stmt->get_result(); //here we know the result for specific user
             $conn->close();
 
             //now we can branch depending on what we got
+            //check if user exists at all
             if ($res->num_rows < 1) {
+                //but we do not tell users that they do not exist
+                //just generic bad login
                 echo "Bad Login";
                 die("No more!");
             }
 
+            //here we get a single row since user names are 
+            // guaranteed to be unique in the database we set the constraint!
             $row = $res->fetch_assoc();
             // var_dump($row);
 
