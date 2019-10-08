@@ -16,15 +16,29 @@
         public function __construct($primColor = "funky", $hasNewPool = false) {
             //we write what we want done whenever we create a new object
             echo "Cool you created a new class instance - that is object <br>";
-            $this->primaryColor = $primColor;
-            echo "Your primary color is " . $this->primaryColor . "<br>";
-            $this->hasPool = $hasNewPool;
+            $this->setColor($primColor);
+            // $this->primaryColor = $primColor;
+            // echo "Your primary color is " . $this->primaryColor . "<br>";
+            // $this->hasPool = $hasNewPool;
+            $this->setPool($hasNewPool);
+            $this->showPool();
+        }
+
+        public function showPool() {
             if ($this->hasPool) {
                 echo "Cool you have a pool<br>";
             } else {
                 echo "Sorry your house has no pool <br>";
             }
         }
+        //Create public setPool method(function)
+        //Create public showPool method(function) 
+        //replace the lines 22 to 27 with setPool and showPool
+        public function setPool($hasPool) {
+            $this->hasPool = $hasPool;
+        }
+
+
 
         public function greetMe($name) {
             echo "Hello " . $name . "<br>";
