@@ -1,6 +1,6 @@
 <?php
     require_once("../src/Classes/House.php");
-    echo "Testing Classes";
+    echo "Testing Classes<hr>";
     
     //we create new instances(object) of the House
 

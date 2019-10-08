@@ -1,7 +1,6 @@
 <?php
     class House {
-        //do stuff, properties and methods follow here
-        private $primaryColor = 'black';
+        //public properties that anyone can modify
         public $secondaryColors = [
             'bathroom' => 'white',
             'bedroom' => 'light pink',
@@ -9,6 +8,16 @@
         ];
         public $hasPool = false;
         public $extra;
+
+        //private properties that only can be modified inside class instance
+        private $primaryColor = 'black';
+
+        //constructor method called once upon object creation
+        public function __construct() {
+            //we write what we want done whenever we create a new object
+            echo "Cool you created a new class instance - that is object <br>";
+
+        }
 
         public function greetMe($name) {
             echo "Hello " . $name . "<br>";
