@@ -8,15 +8,27 @@
     $house2 = new House();
 
     //we can access public properties with -> 
-    echo "My house " . $myhouse->primaryColor;
+    echo "My house " . $myhouse->getColor();
     echo "<hr>";
 
     //we can modify public properties directly even though it against OOP principles
-    echo "Other house " . $house2->primaryColor;
+    echo "Other house " . $house2->getColor();
     echo "<hr>";
-    $house2->primaryColor = "Green";
-    echo $house2->primaryColor;
+
+    //fix this line so we can change a private property using a method
+    // $house2->primaryColor = "Green";
+    $house2->setColor("coolnewcolor");
+
+    echo $house2->getColor();
     echo "<hr>";
-    echo "My house " . $myhouse->primaryColor;
+    echo "My house " . $myhouse->getColor();
     echo "<hr>";
-    echo $myhouse->greetMe("Valdis");
+    $myhouse->greetMe("Valdis");
+    $myhouse->showColor();
+    $house2->showColor();
+    $myhouse->setColor("blue");
+    $house2->setColor("red");
+    $house2->setColor("violet");
+    // $myhouse->showColor();
+    // $house2->showColor();
+    echo "My house color is " . $myhouse->getColor() . "<br>";
