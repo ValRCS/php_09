@@ -3,6 +3,10 @@
         const GREETING = "Hello House Owner!<br>";
         const ENDL = "Ended Constructor<hr>";
 
+        public static function greetAll($name = "") {
+            echo "Hello $name!";
+        }
+
         //public properties that anyone can modify
         public $secondaryColors = [
             'bathroom' => 'white',

@@ -12,6 +12,8 @@
     $jurmalaHouse->launchHeli();
     //we can access class constants from outside using :: syntax
     echo House::GREETING;
+    //we call a static method from the class blueprint
+    House::greetAll("Valdis");
 
     // echo "<hr>";
     // //we can access public properties with -> 
