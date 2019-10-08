@@ -1,5 +1,8 @@
 <?php
     class House {
+        const GREETING = "Hello House Owner!<br>";
+        const ENDL = "Ended Constructor<hr>";
+
         //public properties that anyone can modify
         public $secondaryColors = [
             'bathroom' => 'white',
@@ -16,12 +19,15 @@
         public function __construct($primColor = "funky", $hasNewPool = false) {
             //we write what we want done whenever we create a new object
             echo "Cool you created a new class instance - that is object <br>";
+            //this is how we call internal constants
+            echo self::GREETING;
             $this->setColor($primColor);
             // $this->primaryColor = $primColor;
             // echo "Your primary color is " . $this->primaryColor . "<br>";
             // $this->hasPool = $hasNewPool;
             $this->setPool($hasNewPool);
             $this->showPool();
+            echo self::ENDL;
         }
 
         public function showPool() {
