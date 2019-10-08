@@ -9,4 +9,8 @@
         ];
         public $hasPool = false;
         public $extra;
+
+        public function greetMe($name) {
+            echo "Hello " . $name . "<br>";
+        }
     }

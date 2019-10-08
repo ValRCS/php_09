@@ -19,3 +19,4 @@
     echo "<hr>";
     echo "My house " . $myhouse->primaryColor;
     echo "<hr>";
+    echo $myhouse->greetMe("Valdis");
