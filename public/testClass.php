@@ -5,8 +5,10 @@
     //we create new instances(object) of the House
 
     $myhouse = new House();
-    $house2 = new House();
+    $house2 = new House("strange");
+    $house3 = new House("fun color", true);
 
+    echo "<hr>";
     //we can access public properties with -> 
     echo "My house " . $myhouse->getColor();
     echo "<hr>";
