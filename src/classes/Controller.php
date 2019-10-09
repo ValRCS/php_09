@@ -21,10 +21,21 @@
 
         private function postReq() {
             //we process our post Requests here
+            if (isset($_POST["loginbtn"])) { 
+                $username = $_POST["user"];
+                $pw = $_POST['pw'];
+                //we pass our data to model creating a new array
+                //with subarray on the fly
+                $this->model->processData([
+                    "operation" => "login",
+                    "user" => $username,
+                    "pw" => $pw
+                ]);
+            }
         }
 
         private function getReq() {
             //we process our get Requests here
-            $this->model->processData();
+            $this->model->processData(["operation" => "get"]);
         }
     }
