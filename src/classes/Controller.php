@@ -31,6 +31,10 @@
                     "user" => $username,
                     "pw" => $pw
                 ]);
+            } else if (isset($_POST["logoutbtn"])) {
+                $this->model->processData([
+                    "operation" => "logout"
+                ]);
             }
         }
 

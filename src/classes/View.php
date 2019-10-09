@@ -5,6 +5,7 @@
             //TODO use $data when generating our HTML
             $html .= "<h1>Generating bunch of HTML</h1>";
             $html .= $this->getLogin($data);
+            $html .= $this->getMain($data);
             $html .= $this->getFooter();
             
             echo $html;
@@ -12,10 +13,12 @@
 
         private function getLogin($data) {
             $html = "hmmm";
-            if (array_key_exists("user", $data)
-             && $data['user'] != ""
-            ) {
+            if ($data['state'] == "loggedin" ) {
                 $html = "You are logged in " . $data['user'] . "<br>";
+                $html .= "You user id is " . $data['id'];
+                $html .= "<form action='index.php' method='post'>";
+                $html .= "<button name='logoutbtn' type='submit'>LOGOUT</button>";
+                $html .= "</form><hr>";
             } else {
                 $html = <<<EOT
                 <hr>
@@ -62,6 +65,20 @@ EOT;
 </head>
 <body>
 MYLIMITER;
+            return $html;
+        }
+
+        private function getMain($data) {
+            $html = "";
+            if ($data['state'] == "loggedin" ) {
+                $html = "<main>Cool you are logged getting your songs";
+                $html .= "<div> Songs will go here</div>";
+
+                $html .= "</main>";
+            } else {
+                $html = "Sorry no songs for logged out users";
+            }
+
             return $html;
         }
 

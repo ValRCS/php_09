@@ -5,7 +5,7 @@
     require_once("../src/Classes/Controller.php");
 
     $myview = new View();
-    $mymodel = new Model($myview);
+    $mymodel = new Model($myview);//here DB connection will be created
     $mycontroller = new Controller($mymodel);
 
     $mycontroller->route();
