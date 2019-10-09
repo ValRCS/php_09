@@ -47,19 +47,29 @@
         }
 
         private function processGet($incoming) {
-            $data = [
-                "state" => "none",
-                "user" => "",
-                "tracks" => [
-                    [
-                        "id" => 1,
-                        "track" => "Ziemeļmeita",
-                        "artist" => "Jumprava"
+            if (isset($_SESSION["myname"])) {
+                $data = [
+                    "state" => "loggedin",
+                    "user" => $_SESSION["myname"],
+                    "id" => $_SESSION["id"],
+                    //this will be added by db tomorrow
+                    "tracks" => [
+                        [
+                            "id" => 1,
+                            "track" => "Ziemeļmeita",
+                            "artist" => "Jumprava"
+                        ]
                     ]
-                ]
-            ];
+                ];
+            } else {
+                $data = [
+                    "state" => "loggedout"
+                ];
+            }
+
             return $data;
         }
+
         private function processLogout() {
             if (isset($_COOKIE['TestCookie'])) {
                 unset($_COOKIE['TestCookie']);
