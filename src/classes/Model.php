@@ -12,6 +12,16 @@
             //process incoming
 
             //probably consult DB for truth and change truth states
-            $this->view->render("Big data object should come here");
+            $data = [
+                "user" => "",
+                "tracks" => [
+                    [
+                        "id" => 1,
+                        "track" => "Ziemeļmeita",
+                        "artist" => "Jumprava"
+                    ]
+                ]
+            ];
+            $this->view->render($data);
         }
     }
