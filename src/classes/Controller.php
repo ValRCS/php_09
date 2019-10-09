@@ -7,8 +7,24 @@
             $this->model = $newmodel;
         }
 
+        //we will start the page by routing
         public function route() {
-            //TODO add POST and GET processing
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $this->postReq();
+            }
+            if($_SERVER['REQUEST_METHOD'] == 'GET') {
+                $this->getReq();
+            }
+
+        }
+
+        private function postReq() {
+            //we process our post Requests here
+        }
+
+        private function getReq() {
+            //we process our get Requests here
             $this->model->processData();
         }
     }
