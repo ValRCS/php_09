@@ -73,11 +73,60 @@ MYLIMITER;
             if ($data['state'] == "loggedin" ) {
                 $html = "<main>Cool you are logged getting your songs";
                 $html .= "<div> Songs will go here</div>";
-
+                $html .= $this->getSongs($data['tracks']); //we process song rows here
                 $html .= "</main>";
             } else {
                 $html = "Sorry no songs for logged out users";
             }
+
+            return $html;
+        }
+
+        //we get songs by default default an empty array
+        private function getSongs($myrows = []) {
+            $html = "";
+            if (count($myrows) == 0) {
+                $html .= "<hr>No results<hr>";
+                return $html;
+            }
+            $html .= "<div class='table-cont'>";
+            foreach ($myrows as $key => $row) {
+                //special case using first row we create our table head with column names
+                if ($key == 0) {
+                    $html .= "<div class='table-head'>";
+                    foreach ($row as $colname => $unusedcolvalue) {
+                        $html .= "<span class='col-name'>" . $colname . "</span>";
+                    }
+                    $html .= "</div>";
+                }
+                $html .= "<div class='row-cont'>";
+                // foreach ($row as $unusedcolkey => $colvalue) {
+                foreach ($row as  $cellkey => $cellvalue) {
+                    $html .= "<form action='updatemusicrow.php' method='post'>";
+                    if ($cellkey == "name" || $cellkey == "artist" || $cellkey == "album") {
+                        
+                        $html .= "<span>";
+                        
+                        $html .= "<input name='". $cellkey . "' value='" . $cellvalue . "'>";
+                        $html .= "</span>";
+                    } else {
+                        $html .= "<span>" . $cellvalue . "</span>";
+                    }
+     
+    
+                }
+    
+                $html .= "<span class='del-cont'>";
+                $html .= "<button name='updbtn' value='" . $row['id'] . "' type='submit'>UPDATE</button>";
+                $html .= "</span>";
+                $html .= "<span class='del-cont'>";
+                $html .= "<button name='delbtn' value='" . $row['id'] . "' type='submit'>DELETE</button>";
+                $html .= "</span>";
+    
+                $html .= "</form>";
+                $html .= "</div>";
+            }
+            $html .= "</div>";
 
             return $html;
         }

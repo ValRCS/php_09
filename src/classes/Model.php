@@ -56,8 +56,10 @@
                     "tracks" => [
                         [
                             "id" => 1,
-                            "track" => "Ziemeļmeita",
-                            "artist" => "Jumprava"
+                            "name" => "Ziemeļmeita",
+                            "artist" => "Jumprava",
+                            "album" => "Best Hits",
+                            "created" => "2019-10-02 12:18:40"
                         ]
                     ]
                 ];
