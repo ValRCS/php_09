@@ -137,3 +137,5 @@ vendor/psr/log/Psr/Log/LogLevel.php
 vendor/psr/log/Psr/Log/NullLogger.php
 vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
 vendor/psr/log/Psr/Log/Test/TestLogger.php
+logs/my.log
+public/my.log
