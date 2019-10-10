@@ -43,6 +43,11 @@
                     "album" => $_POST["newalbum"],
                     "uid" => $_POST["addsong"] //we are using the submit button value we set in View
                 ]);
+            } else if (isset($_POST["delbtn"])) {
+                $this->model->processData([
+                    "operation" => "deletesong",
+                    "songid" => $_POST["delbtn"]
+                ]);
             }
         }
 

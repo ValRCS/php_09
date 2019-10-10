@@ -25,11 +25,12 @@
                     break;
                 case "addsong":
                     $this->addSong($incoming);
-                    die("Song should be added");
-                    //todo get current songs
-                    $data = $this->processGet($incoming);
+                    header("Location: index.php");
+                    break;
+                case "deletesong":
+                    die("Deleting for now");
+                    break;
 
-                break;
             }
             //probably consult DB for truth and change truth states
 
@@ -47,7 +48,6 @@
                 $_POST["newalbum"], 
                 $_POST["addsong"]); 
             $stmt->execute();
-            die("For now but song should be added");
         }
 
         private function createDB($cfg) {

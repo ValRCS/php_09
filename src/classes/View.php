@@ -118,7 +118,7 @@ EOT;
                 $html .= "<div class='row-cont'>";
                 // foreach ($row as $unusedcolkey => $colvalue) {
                 foreach ($row as  $cellkey => $cellvalue) {
-                    $html .= "<form action='updatemusicrow.php' method='post'>";
+                    $html .= "<form action='index.php' method='post'>";
                     if ($cellkey == "name" || $cellkey == "artist" || $cellkey == "album") {
                         
                         $html .= "<span>";
