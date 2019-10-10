@@ -22,11 +22,32 @@
                     break;
                 case "get":
                     $data = $this->processGet($incoming);
+                    break;
+                case "addsong":
+                    $this->addSong($incoming);
+                    die("Song should be added");
+                    //todo get current songs
+                    $data = $this->processGet($incoming);
+
                 break;
             }
             //probably consult DB for truth and change truth states
 
             $this->view->render($data);
+        }
+
+        private function addSong($incoming) {
+            $stmt = $this->db->prepare("INSERT INTO `tracks` 
+                (`name`, `artist`, `album`, `user_id`) 
+                VALUES (?,?,?,?)");
+            //TODO change $_POST to $incoming arr values
+            $stmt->bind_param("ssss", 
+                $_POST["newtrack"], 
+                $_POST["newartist"], 
+                $_POST["newalbum"], 
+                $_POST["addsong"]); 
+            $stmt->execute();
+            die("For now but song should be added");
         }
 
         private function createDB($cfg) {

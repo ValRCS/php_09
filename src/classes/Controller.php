@@ -35,6 +35,14 @@
                 $this->model->processData([
                     "operation" => "logout"
                 ]);
+            } else if (isset($_POST["addsong"])) {
+                $this->model->processData([
+                    "operation" => "addsong",
+                    "song" => $_POST["newtrack"],
+                    "artist" => $_POST["newartist"],
+                    "album" => $_POST["newalbum"],
+                    "uid" => $_POST["addsong"] //we are using the submit button value we set in View
+                ]);
             }
         }
 

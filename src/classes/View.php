@@ -72,7 +72,7 @@ MYLIMITER;
             $html = "";
             if ($data['state'] == "loggedin" ) {
                 $html = "<main>Cool you are logged getting your songs";
-                $html .= $this->getSongs($data['id']);
+                $html .= $this->getNewSongForm($data['id']);
                 $html .= "<div> Songs will go here</div>";
                 $html .= $this->getSongs($data['tracks']); //we process song rows here
                 $html .= "</main>";
@@ -84,9 +84,17 @@ MYLIMITER;
         }
 
         private function getNewSongForm($uid) {
-            $html = "";
-
-
+            $html = <<<EOT
+            <form action="index.php" method="post">
+            <label for="newtrack">Track</label>
+            <input type="text" name="newtrack" id="new-track">
+            <label for="newartist">Artist</label>
+            <input type="text" name="newartist" id="new-artist">
+            <label for="newalbum">Album</label>
+            <input type="text" name="newalbum" id="new-album">
+            <button type="submit" name="addsong" value="$uid">ADD NEW SONG</button>
+        </form>
+EOT;
             return $html;
         }
 
