@@ -1,5 +1,7 @@
 <?php
-    require_once("Model.php");
+    // require_once("Model.php");
+    namespace RCS\Classes;
+    
     class Controller {
         private $model;
 

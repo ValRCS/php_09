@@ -1,4 +1,6 @@
 <?php
+    namespace RCS\Classes;
+
     class View {
         public function render($data = null) {
             $html = $this->getHeader();

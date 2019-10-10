@@ -1,5 +1,7 @@
 <?php
-    require_once("View.php");
+    namespace RCS\Classes;
+
+    // require_once("View.php");
     require_once(__DIR__."/../../config/cfg.php");
     class Model {
         private $view;
