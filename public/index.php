@@ -5,12 +5,18 @@
     require_once("../src/Classes/Model.php");
     require_once("../src/Classes/Controller.php");
 
+    use Monolog\Logger;
+    use Monolog\Handler\StreamHandler;
+
+    //create new logger and indicate where to save logs
+    $log = new Logger('name');
+    $log->pushHandler(new StreamHandler('../logs/my.log', Logger::WARNING));
+
     $myview = new View();
     $mymodel = new Model($myview);//here DB connection will be created
     $mycontroller = new Controller($mymodel);
 
-    $log = new Monolog\Logger('name');
-    $log->pushHandler(new Monolog\Handler\StreamHandler('../logs/my.log', Monolog\Logger::WARNING));
+    
     
     // add records to the log
     $log->warning('Foo');
