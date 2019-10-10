@@ -53,15 +53,16 @@
                     "user" => $_SESSION["myname"],
                     "id" => $_SESSION["id"],
                     //this will be added by db tomorrow
-                    "tracks" => [
-                        [
-                            "id" => 1,
-                            "name" => "Ziemeļmeita",
-                            "artist" => "Jumprava",
-                            "album" => "Best Hits",
-                            "created" => "2019-10-02 12:18:40"
-                        ]
-                    ]
+                    // "tracks" => [
+                    //     [
+                    //         "id" => 1,
+                    //         "name" => "Ziemeļmeita",
+                    //         "artist" => "Jumprava",
+                    //         "album" => "Best Hits",
+                    //         "created" => "2019-10-02 12:18:40"
+                    //     ]
+                    // ]
+                    "tracks" => $this->getSongs($_SESSION["id"])
                 ];
             } else {
                 $data = [
@@ -70,6 +71,36 @@
             }
 
             return $data;
+        }
+        
+        private function getSongs(  $userid = 0, 
+                                    $songfilter = "", 
+                                    $artistfilter = "",
+                                    $albumfilter = "") {
+            //generic get all statement   
+            if ($userid) {
+                $statement = $this->db->prepare("SELECT * 
+                    FROM tracks 
+                    WHERE user_id = (?)
+                    AND name LIKE (?);");
+                $songfilter = "%".$songfilter."%";
+                $statement->bind_param("ss", $userid, $songfilter );
+
+                
+            }  else {
+                //covering case without user id
+                $statement = $this->db->prepare("SELECT * FROM tracks");
+            }                  
+
+            $statement->execute();
+            $result = $statement->get_result(); 
+            if ($result->num_rows > 0) {
+                $myrows = $result->fetch_all(MYSQLI_ASSOC);   
+            } else {
+                $myrows = [];
+            }
+            return $myrows;                           
+
         }
 
         private function processLogout() {

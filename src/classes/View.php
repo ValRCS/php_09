@@ -72,12 +72,20 @@ MYLIMITER;
             $html = "";
             if ($data['state'] == "loggedin" ) {
                 $html = "<main>Cool you are logged getting your songs";
+                $html .= $this->getSongs($data['id']);
                 $html .= "<div> Songs will go here</div>";
                 $html .= $this->getSongs($data['tracks']); //we process song rows here
                 $html .= "</main>";
             } else {
                 $html = "Sorry no songs for logged out users";
             }
+
+            return $html;
+        }
+
+        private function getNewSongForm($uid) {
+            $html = "";
+
 
             return $html;
         }
