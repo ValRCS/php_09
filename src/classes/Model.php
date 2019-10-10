@@ -28,13 +28,23 @@
                     header("Location: index.php");
                     break;
                 case "deletesong":
-                    die("Deleting for now");
+                    $this->deleteSong($incoming["songid"], $_SESSION["id"]);
+                    header("Location: index.php");
                     break;
 
             }
             //probably consult DB for truth and change truth states
 
             $this->view->render($data);
+        }
+
+        private function deleteSong($songid, $userid) {
+            $stmt = $this->db->prepare("DELETE FROM `tracks` 
+                WHERE `tracks`.`id` = (?)
+                AND user_id = (?)");
+            // $_POST["delbtn"] should return the value of the button
+            $stmt->bind_param("ss", $songid, $userid); 
+            $stmt->execute();
         }
 
         private function addSong($incoming) {
