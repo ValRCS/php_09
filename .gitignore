@@ -140,3 +140,7 @@ vendor/psr/log/Psr/Log/Test/TestLogger.php
 logs/my.log
 public/my.log
 public/uploads/local_version_control.png
+public/myuploads/central_version_control.png
+public/myuploads/distributed_version_control.png
+public/myuploads/Layout_High_Level.png
+public/uploads/Layout_High_Level.png
