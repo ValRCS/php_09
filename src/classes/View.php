@@ -130,8 +130,8 @@ EOT;
                     if ($cellkey == "name" || $cellkey == "artist" || $cellkey == "album") {
                         
                         $html .= "<span>";
-                        
-                        $html .= "<input name='". $cellkey . "' value='" . $cellvalue . "'>";
+                        $elid = " id='" . $cellkey . $row['id'] . "' ";
+                        $html .= "<input $elid name='" . $cellkey . "' value='" . $cellvalue . "'>";
                         $html .= "</span>";
                     } else {
                         $html .= "<span>" . $cellvalue . "</span>";
@@ -148,7 +148,7 @@ EOT;
                 $html .= "</span>";
     
                 $html .= "</form>";
-                $html .= "<button name='realupdate' class='updatebtns' value='" . $row['id'] . "'>Delete With JS</button>";
+                $html .= "<button name='realupdate' class='updatebtns' value='" . $row['id'] . "'>Update With JS</button>";
                 $html .= "</div>";
             }
             $html .= "</div>";
