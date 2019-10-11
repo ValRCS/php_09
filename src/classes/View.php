@@ -148,7 +148,7 @@ EOT;
                 $html .= "</span>";
     
                 $html .= "</form>";
-                $html .= "<button name='realupdate' class='updatebtns' value='" . $row['id'] . "'>Update With JS</button>";
+                $html .= "<button name='realupdate' class='updatebtns' value='" . $row['id'] . "'>Delete With JS</button>";
                 $html .= "</div>";
             }
             $html .= "</div>";
