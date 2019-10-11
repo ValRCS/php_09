@@ -139,3 +139,4 @@ vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
 vendor/psr/log/Psr/Log/Test/TestLogger.php
 logs/my.log
 public/my.log
+public/uploads/local_version_control.png
