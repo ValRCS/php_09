@@ -18,6 +18,7 @@
             switch ($incoming['operation']) {
                 case "login":
                     $data = $this->processLogin($incoming);
+                    header("Location: index.php");
                 break;
                 case "logout":
                     $data = $this->processLogout($incoming);

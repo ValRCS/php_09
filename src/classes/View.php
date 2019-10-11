@@ -55,6 +55,7 @@ EOT;
             //https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
             $pagetitle = "My music page"; //TODO get title from config
             $stylefile = "style.css" ; //TODO get style from config
+            $jsfile = "main.js";
             $html = <<<MYLIMITER
 <!DOCTYPE html>
 <html lang="lv">
@@ -64,6 +65,11 @@ EOT;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>$pagetitle</title>
     <link rel="stylesheet" href="styles/$stylefile">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="scripts/$jsfile" defer></script>
 </head>
 <body>
 MYLIMITER;
@@ -142,6 +148,7 @@ EOT;
                 $html .= "</span>";
     
                 $html .= "</form>";
+                $html .= "<button name='realupdate' class='updatebtns' value='" . $row['id'] . "'>Delete With JS</button>";
                 $html .= "</div>";
             }
             $html .= "</div>";
